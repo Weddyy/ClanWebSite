@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../../css/main.css" />
+
+    <script th:src="@{/js/jquery-3.1.1.min.js}"
+            src="../../js/jquery-3.1.1.min.js"></script>
+
+ <!--   <script th:src="@{/js/angular.js}"
+            src="../../js/angular.js"></script> -->
+
+    <script th:src="@{/js/myJs.js}"
+            src="../../js/myJs.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <button ng-click="go()"></button>
+
+    <h1 ng-mousemove="count = count + 1">Mouse Over Me!</h1>
+
+    <h2>{{ count }}</h2>
+
+</div>
+<div ng-app="myApp" ng-controller="newCtrl">
+    <button ng-click="count = count +1" ng-mousemove="count = count + 1"></button>
+
+</div>
+</body>
+</html>

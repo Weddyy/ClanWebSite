@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemaApplication {
+public class MainRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemaApplication.class, args);
+		SpringApplication.run(MainRunner.class, args);
 	}
 }
