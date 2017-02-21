@@ -1,20 +1,23 @@
 package com.clan.model.clan;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 /**
  * Created by weddy on 21.02.17.
  */
+@Entity
+@Table(name = "game_parts", schema = "clanSite")
+@EqualsAndHashCode(exclude={"topics"})
+@ToString(exclude={"topics"})
 public @Data class ClanPart {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String partName;
@@ -24,6 +27,6 @@ public @Data class ClanPart {
     private Set<PartTopic> topics;
 
     @ManyToOne
-    @JoinColumn(name="department_id")
+    @JoinColumn(name="game_id")
     private ClanGame clanGame;
 }

@@ -2,6 +2,8 @@ package com.clan.model.clan;
 
 import com.clan.model.User;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,6 +14,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "clan", schema = "clanSite")
+@EqualsAndHashCode(exclude={"users", "games"})
+@ToString(exclude={"users", "games"})
 public @Data class Clan {
 
     @Id
@@ -29,4 +33,7 @@ public @Data class Clan {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "clan")
     private Set<ClanGame> games;
+
+
+
 }

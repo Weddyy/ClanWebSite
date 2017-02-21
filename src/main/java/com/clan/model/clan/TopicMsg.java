@@ -2,7 +2,6 @@ package com.clan.model.clan;
 
 import com.clan.model.User;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,9 +9,12 @@ import java.util.Date;
 /**
  * Created by weddy on 21.02.17.
  */
+@Entity
+@Table(name = "topic_msg", schema = "clanSite")
 public @Data class TopicMsg {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String msg;
