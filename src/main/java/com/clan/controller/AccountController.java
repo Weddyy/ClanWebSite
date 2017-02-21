@@ -1,7 +1,7 @@
 package com.clan.controller;
 
 import com.clan.model.UserInfo;
-import com.clan.service.impl.UserServiceMySQL;
+import com.clan.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountController {
 
     @Autowired
-    UserServiceMySQL service;
+    UserServiceImpl service;
 
     @RequestMapping(value = "/get",method = RequestMethod.GET)
     public UserInfo getInfo()

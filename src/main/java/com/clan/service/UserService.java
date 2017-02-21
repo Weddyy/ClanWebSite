@@ -22,6 +22,13 @@ public interface UserService {
     public User getUserByEmailAndPassword(String email,String pass);
 
     /**
+     * Найти пользователя
+     * @param id ид пользователя
+     * @return
+     */
+    public User getUserById(int id);
+
+    /**
      * Удалить пользователя с базы
      * @param id
      */
