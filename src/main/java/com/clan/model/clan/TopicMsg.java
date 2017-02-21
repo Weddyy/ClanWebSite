@@ -19,10 +19,12 @@ public @Data class TopicMsg {
 
     private String msg;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="user_id")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="user_id", nullable = false)
     private User user;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(insertable=false)
     private Date postedDate;
 
     @ManyToOne(fetch = FetchType.EAGER)
