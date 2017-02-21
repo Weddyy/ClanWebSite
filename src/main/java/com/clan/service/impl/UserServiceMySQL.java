@@ -1,8 +1,9 @@
-package com.clan.service;
+package com.clan.service.impl;
 
 import com.clan.model.User;
 import com.clan.model.UserInfo;
 import com.clan.repository.UserRepository;
+import com.clan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
  * Created by weddy on 20.02.17.
  */
 @Service
-public class ServiceMySQL implements ServiceInterface {
+public class UserServiceMySQL implements UserService {
 
     @Autowired
     UserRepository userRepository;

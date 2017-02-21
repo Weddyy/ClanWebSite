@@ -1,8 +1,10 @@
 package com.clan.model;
 
+import com.clan.model.clan.Clan;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by weddy on 19.02.17.
@@ -10,7 +12,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users", schema = "clanSite")
 public @Data class User {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,6 +24,9 @@ public @Data class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="user_info_id")
     private UserInfo info;
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
+    Set<Clan> clans;
 
 
     @Override

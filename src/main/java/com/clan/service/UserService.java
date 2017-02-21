@@ -6,7 +6,7 @@ import com.clan.model.UserInfo;
 /**
  * Created by weddy on 20.02.17.
  */
-public interface ServiceInterface {
+public interface UserService {
     /**
      * Создать пользователя в базе данных
      * @param user

@@ -1,7 +1,10 @@
-package com.clan;
+package com.clan.RepositoryTest;
 
+import com.clan.MainRunner;
+import com.clan.model.clan.Clan;
 import com.clan.model.UserInfo;
 import com.clan.model.User;
+import com.clan.repository.ClanRepository;
 import com.clan.repository.UserRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,22 +14,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashSet;
+
 /**
  * Created by weddy on 19.02.17.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MainRunner.class, webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class RepositoryTest {
+public class UserTest {
 
 
     @Autowired
     private UserRepository repo;
-
-    @Before
-    public void setup()
-    {
-
-    }
 
     @Test
     public void addGetAndDelete()
@@ -67,5 +66,7 @@ public class RepositoryTest {
         User newEntity = repo.findByEmail(entity.getEmail());
         Assert.assertEquals(entity,newEntity);
     }
+
+
 
 }

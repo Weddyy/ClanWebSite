@@ -14,4 +14,10 @@ public class IndexController {
     {
         return "index";
     }
+
+    @RequestMapping("/4")
+    public String indexPageS()
+    {
+        return "index";
+    }
 }
