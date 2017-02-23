@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserByEmailAndPassword(String email, String pass) {
         User user = userRepository.findByEmail(email);
-        if(user==null || !user.getPasswrd().equals(pass))
+        if(user==null || !user.getPassword().equals(pass))
             throw new UserNotFoundException("User not found");
 
         return user;

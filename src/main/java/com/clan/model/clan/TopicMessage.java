@@ -11,16 +11,16 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "topic_msg", schema = "clanSite")
-public @Data class TopicMsg {
+@Data
+public class TopicMessage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
-    private String msg;
+    private String message;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="user_id", nullable = false)
     private User user;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -28,6 +28,5 @@ public @Data class TopicMsg {
     private Date postedDate;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "topic_id", nullable = false)
     private PartTopic topic;
 }

@@ -119,7 +119,7 @@ public class ClanServiceImpl implements ClanService {
     }
 
     @Override
-    public TopicMsg addMsg(int topicId,int userId, TopicMsg msg) {
+    public TopicMessage addMsg(int topicId, int userId, TopicMessage msg) {
         PartTopic partTopic = getTopic(topicId);
         User user = userService.getUserById(userId);
         msg.setTopic(partTopic);
@@ -128,12 +128,12 @@ public class ClanServiceImpl implements ClanService {
     }
 
     @Override
-    public TopicMsg updateMsg(int topicId, TopicMsg msg) {
+    public TopicMessage updateMsg(int topicId, TopicMessage msg) {
         return null;
     }
 
     @Override
-    public TopicMsg getMsg(int msgId) {
+    public TopicMessage getMsg(int msgId) {
         if(!topicMsgRepository.exists(msgId))
             throw new MsgNotFoundException("Msg not found");
         return topicMsgRepository.findOne(msgId);

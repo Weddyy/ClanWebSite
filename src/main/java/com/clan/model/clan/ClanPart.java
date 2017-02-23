@@ -14,11 +14,12 @@ import java.util.Set;
 @Table(name = "game_parts", schema = "clanSite")
 @EqualsAndHashCode(exclude={"topics"})
 @ToString(exclude={"topics"})
-public @Data class ClanPart {
+@Data
+public class ClanPart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     private String partName;
     private String partDisc;
@@ -27,6 +28,5 @@ public @Data class ClanPart {
     private Set<PartTopic> topics;
 
     @ManyToOne
-    @JoinColumn(name="game_id")
     private ClanGame clanGame;
 }

@@ -14,20 +14,20 @@ import java.util.Set;
 @Table(name = "part_topics", schema = "clanSite")
 @EqualsAndHashCode(exclude={"msgs"})
 @ToString(exclude={"msgs"})
-public @Data class PartTopic {
+@Data
+public class PartTopic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     private String topicName;
     private String topicDisc;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "topic")
-    private Set<TopicMsg> msgs;
+    private Set<TopicMessage> message;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "game_part_id", nullable = false)
     private ClanPart part;
 
 }

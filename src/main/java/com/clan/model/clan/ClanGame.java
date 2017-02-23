@@ -1,6 +1,5 @@
 package com.clan.model.clan;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -15,11 +14,12 @@ import java.util.Set;
 @Table(name = "clan_game", schema = "clanSite")
 @EqualsAndHashCode(exclude={"parts"})
 @ToString(exclude={"parts"})
-public @Data class ClanGame {
+@Data
+public class ClanGame {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     private String gameName;
     private String gameDisc;
@@ -29,6 +29,5 @@ public @Data class ClanGame {
     private Set<ClanPart> parts;
 
     @ManyToOne
-    @JoinColumn(name="clan_id")
     private Clan clan;
 }

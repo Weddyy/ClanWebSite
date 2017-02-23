@@ -4,5 +4,5 @@ package com.clan.model.enums;
  * Created by weddy on 19.02.17.
  */
 public enum  AccessLevel {
-    ANNONIMUS,USER,ADMIN
+    ANONYMOUS,USER,ADMIN
 }

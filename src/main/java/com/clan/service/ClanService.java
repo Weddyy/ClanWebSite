@@ -113,20 +113,20 @@ public interface ClanService {
      * @param userId ид пользователя
      * @param msg сообщение
      */
-    public TopicMsg addMsg(int topicId,int userId, TopicMsg msg);
+    public TopicMessage addMsg(int topicId, int userId, TopicMessage msg);
 
     /**
      * Изменить сообщение в топике
      * @param topicId ид топика
      * @param msg сообщение
      */
-    public TopicMsg updateMsg(int topicId,TopicMsg msg);
+    public TopicMessage updateMsg(int topicId, TopicMessage msg);
 
     /**
      * Найти сообщение из топика
      * @param msgId ид сообщения
      */
-    public TopicMsg getMsg(int msgId);
+    public TopicMessage getMsg(int msgId);
 
     /**
      * Удалить сообщение из топика
