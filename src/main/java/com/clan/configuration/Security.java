@@ -14,7 +14,7 @@ public class Security extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .antMatcher("/**")
-                .authorizeRequests().anyRequest().permitAll();
+                .authorizeRequests().anyRequest().permitAll().and().csrf().disable();
 
     }
 }

@@ -1,5 +1,6 @@
 package com.clan.model.clan;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -27,6 +28,7 @@ public @Data class ClanGame {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "clanGame")
     private Set<ClanPart> parts;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="clan_id")
     private Clan clan;

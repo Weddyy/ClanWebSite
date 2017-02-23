@@ -7,10 +7,12 @@ import com.clan.repository.*;
 import com.clan.service.ClanService;
 import com.clan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by weddy on 21.02.17.
  */
+@Service
 public class ClanServiceImpl implements ClanService {
 
     @Autowired
